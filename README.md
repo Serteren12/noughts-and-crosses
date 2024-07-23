@@ -1,2 +1,2 @@
 # noughts-and-crosses
-A classic game of tic-tac-toe against an AI opponent.
+A classic game of tic-tac-toe against either an AI opponent or a second player.

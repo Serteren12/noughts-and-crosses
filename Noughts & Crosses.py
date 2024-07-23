@@ -123,6 +123,21 @@ class engine:
             elif crosses == 3:
                 return "X"
             
+        # Columns
+        for column in range(0,3):
+            noughts = 0
+            crosses = 0
+            for row in range(0,3):
+                if self.board[row][column] == "0":
+                    noughts += 1
+                elif self.board[row][column] == "X":
+                    crosses += 1
+            if noughts == 3:
+                return "0"
+            elif crosses == 3:
+                return "X"
+                
+
 
         # Checks for a draw
         space = False

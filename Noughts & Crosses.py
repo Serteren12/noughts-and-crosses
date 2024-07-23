@@ -1,7 +1,6 @@
 class engine:
     def __init__(self):
         self.setup()
-        self.play_game()
 
     def setup(self):
         # Assembles the game board using a 2D array
@@ -40,13 +39,13 @@ class engine:
         cycle = 1
         
         while playing:
-            # Determines current player
+            # Determines current self.player
             if (cycle % 2) == 1:
-                player = "X"
+                self.player = "X"
                 print("Crosses' turn!")
             
             else:
-                player = "0"
+                self.player = "0"
                 print("Nought's turn!")
             
             print("")
@@ -56,26 +55,38 @@ class engine:
             # Inputs and sanitises the X and Y co-ordinates
             valid = False
             while valid == False:
-                x = input("Enter X co-ordinate: ")
-                valid = self.input_check(x)
-            x = int(x) - 1
+                self.x = input("Enter X co-ordinate: ")
+                valid = self.input_check(self.x)
+            self.x = int(self.x) - 1
             
             valid = False
             while valid == False:
-                y = input("Enter Y co-ordinate: ")
-                valid = self.input_check(y)
-            y = int(y) - 1 
+                self.y = input("Enter Y co-ordinate: ")
+                valid = self.input_check(self.y)
+            self.y = int(self.y) - 1 
 
             # Marks the input on the board
-            if self.board[y][x] == "-":
+            if self.board[self.y][self.x] == "-":
                 cycle += 1
                 valid = True
-                self.board[y][x] = player
+                self.board[self.y][self.x] = self.player
             else:
                 print("Space already taken!")
 
-            if self.win_check() == "draw":
+            result = self.win_check()
+            
+            if result == "draw":
                 print("The game was a draw!")
+                self.print_board()
+                playing = False
+
+            elif result == "0":
+                print("Noughts win!")
+                self.print_board()
+                playing = False
+            
+            elif result == "X":
+                print("Crosses win!")
                 self.print_board()
                 playing = False
 
@@ -94,7 +105,26 @@ class engine:
         return valid
     
     def win_check(self):
-        # Checks all spaces are filled
+
+        
+        # Checks if either player has won
+        
+        # Rows
+        for row in self.board:
+            noughts = 0
+            crosses = 0
+            for item in row:
+                if item == "0":
+                    noughts += 1
+                elif item == "X":
+                    crosses += 1
+            if noughts == 3:
+                return "0"
+            elif crosses == 3:
+                return "X"
+            
+
+        # Checks for a draw
         space = False
         for list in self.board:
             for item in list:
@@ -103,4 +133,6 @@ class engine:
         if space == False:
             return "draw"
 
+
 engine = engine()
+engine.play_game()

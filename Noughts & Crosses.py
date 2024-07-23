@@ -37,11 +37,10 @@ class engine:
     def play_game(self):
         # Loops until the game is complete
         playing = True
-        cycle = 0
+        cycle = 1
         
         while playing:
             # Determines current player
-            cycle += 1
             if (cycle % 2) == 1:
                 player = "X"
                 print("Crosses' turn!")
@@ -69,6 +68,7 @@ class engine:
 
             # Marks the input on the board
             if self.board[y][x] == "-":
+                cycle += 1
                 valid = True
                 self.board[y][x] = player
             else:

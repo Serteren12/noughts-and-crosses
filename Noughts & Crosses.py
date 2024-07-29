@@ -137,7 +137,20 @@ class engine:
             elif crosses == 3:
                 return "X"
                 
-
+        # Diagonals
+        for num in range(1,3):
+            noughts = 0
+            crosses = 0
+            if num == 1:
+                if self.board[0][0] == "0" and self.board[1][1] == "0" and self.board[2][2] == "0":
+                    return "0"
+                elif self.board[0][0] == "X" and self.board[1][1] == "X" and self.board[2][2] == "X":
+                    return "X"
+            elif num == 2:
+                if self.board[0][2] == "0" and self.board[1][1] == "0" and self.board[2][0] == "0":
+                    return "0"
+                elif self.board[0][2] == "X" and self.board[1][1] == "X" and self.board[2][0] == "X":
+                    return "X"
 
         # Checks for a draw
         space = False

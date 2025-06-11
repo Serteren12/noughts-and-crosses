@@ -1,4 +1,6 @@
-# About
+# README first!
+
+## About
 
 Hi there! Here you'll find the bridging work for joining the Computer Science course in 2025!
 
@@ -11,18 +13,18 @@ This dosn't have to be perfect! I just want you to explore some options, have a 
 If there are any problems or if you need some help, send me an email at theotsmith@protonmail.com. I may be away so it might be a little while before you get a response.
 
 
-# Some helpful resources (all free!)
+## Some helpful resources (all free!)
 
-## Documentation and support
+### Documentation and support
 w3schools offer free guides on Python, these can all be found here - https://www.w3schools.com/python/default.asp
 An introduction to machine learning - https://www.w3schools.com/python/python_ml_getting_started.asp
 
-## ML Tools
+### ML Tools
 ML for Kids (if an account has not been created for you, give me a shout and I'll set one up) - https://machinelearningforkids.co.uk/#!/welcome
 TensorFlow - https://www.tensorflow.org/
 PyTorch - https://pytorch.org/
 
-## Misc. extra tools
+### Misc. extra tools
 Visual Studio Code, a free code editor - https://code.visualstudio.com/
 GitHub student developer package - https://education.github.com/pack
 JetBrains IDEs - these are more in-depth code editors, included for free with the student developer pack. Use PyCharm for Python - https://www.jetbrains.com/
